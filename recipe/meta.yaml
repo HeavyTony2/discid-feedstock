@@ -10,16 +10,16 @@ source:
   sha256: cd9630bc53f5566df92819641040226e290b2047573f2c74a6e92b8eed9e86b9
 
 build:
+  noarch: python
   script: {{ PYTHON }} -m pip install . -vv
   number: 1
-  noarch: python
 
 requirements:
   host:
-    - python
+    - python >=3.6
     - pip
   run:
-    - python
+    - python >=3.6
     - libdiscid
 
 test:
@@ -29,7 +29,6 @@ test:
     - pip check
   requires:
     - pip
-    - libdiscid
 
 about:
   home: https://python-discid.readthedocs.org/
